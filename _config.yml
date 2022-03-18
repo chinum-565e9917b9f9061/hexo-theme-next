@@ -44,6 +44,17 @@ scheme: Muse
 # Dark Mode
 darkmode: false
 
+# Base16
+# Added by @sandyzikun(https://github.com/sandyzikun/)
+# Change all colors into base16 themes.
+base16:
+  enable: false
+  theme: solarized
+  scheme:
+    colorscheme: pjsekai-ichika
+    highlight: altercation
+    aplayer: notebook
+
 
 # ---------------------------------------------------------------
 # Site Information Settings

@@ -13,6 +13,9 @@
 
   if (hexo-config('codeblock.copy_button.style') == 'flat') {
     background: white;
+    if hexo-config("base16") && hexo-config("base16.enable") {
+      background: $base16wht;
+    }
     border: 0;
     font-size: $font-size-smaller;
     right: 0;
@@ -46,6 +49,10 @@ if (hexo-config('codeblock.copy_button.style') == 'mac') {
     &::before {
       background: #fc625d;
       box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+      if hexo-config("base16") && hexo-config("base16.enable") {
+        background: saturate($base-red + 32.098765432098766%, 35.8974358974359%);
+        box-shadow: 20px 0 desaturate($base-yellow + 41.33738601823708%, 2.072538860103627%), 40px 0 desaturate($base-green + 29.411764705882355%, 39.682539682539684%);
+      }
       left: 12px;
       margin-top: -20px;
       position: absolute;

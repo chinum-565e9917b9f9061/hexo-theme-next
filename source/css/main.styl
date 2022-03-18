@@ -43,3 +43,13 @@ for $inject_mixin in hexo-config('injects.mixin')
 // --------------------------------------------------
 for $inject_style in hexo-config('injects.style')
   @import $inject_style;
+
+
+//
+// --------------------------------------------------
+if hexo-config("base16") && hexo-config("base16.enable")
+  // if hexo-config("highlight.enable") && !hexo-config("js.enable")
+  @import "_base16extensions/_hljs/" + (hexo-config("base16.scheme.highlight") || "altercation") + "-light.styl"
+  if hexo-config("darkmode")
+    @media (prefers-color-scheme: dark)
+      @import "_base16extensions/_hljs/" + (hexo-config("base16.scheme.highlight") || "altercation") + "-dark.styl"

@@ -47,6 +47,22 @@
   {%- include '_third-party/math/index.njk' -%}
   {%- include '_third-party/quicklink.njk' -%}
 
+  {%- if theme.base16 and theme.base16.enable %}
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      for (var eachtag of document.getElementsByClassName("aplayer-style-marker"))
+        eachtag.remove();
+      /*
+      for (var eachtag of aplayers)
+        eachtag.theme("#39c5bb"); // #7aaca8
+      for (var eachclass of [ "pic" , "played" , "thumb" , "volume" ])
+        for (var eachtag of document.getElementsByClassName("aplayer-" + eachclass))
+          eachtag.style.backgroundColor = "#39c5bb";
+      */
+    });
+  </script>
+  {%- endif %}
+
   {{- next_inject('bodyEnd') }}
 </body>
 </html>

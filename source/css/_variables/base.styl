@@ -2,6 +2,8 @@
 // Variables
 // ==================================================
 
+if hexo-config("base16") && hexo-config("base16.enable")
+  @import "_base16extensions/init"
 
 // Color system
 // --------------------------------------------------
@@ -20,6 +22,25 @@ $blue-bright  = #87daff;
 $blue         = #0684bd;
 $blue-deep    = #262a30;
 $orange       = #fc6423;
+
+if hexo-config("base16") && hexo-config("base16.enable")
+  $base16wht = lighten($base07, 56%);
+  $base16blk = darken($base00, 39%);
+  $whitesmoke   = $base07 + 33.33333333333333%;
+  $gainsboro    = $base06 + 42.3728813559322%;
+  $grey-lighter = $base05 + 66.33663366336634%;
+  $grey-light   = $base05 + 49.504950495049506%;
+  $grey         = $base05 + 32.67326732673268%;
+  $grey-dark    = $base05 -  0.6493506493506493%;
+  $grey-dim     = $base02 -  0.4878048780487805%;
+  $black-light  = $base02 - 17.073170731707318%;
+  $black-dim    = $base02 - 50.24390243902439%;
+  $black-deep   = $base01 -  6.8493150684931505%;
+  $red          =   saturate($base-red    + 12.345679012345679%, 41.05960264900662%);
+  $blue-bright  =   saturate($base-blue   + 54.19847328244275%,  42.857142857142854%);
+  $blue         =   saturate($base-blue   - 21.370967741935484%, 35.55555555555556%);
+  $blue-deep    = desaturate($base-blue   - 65.32258064516128%,  83.33333333333334%);
+  $orange       =   saturate($base-orange + 21.75438596491228%,  21.22905027932961%);
 
 
 // Transition
@@ -54,6 +75,11 @@ $body-bg-color                = white;
 $body-bg-color-dark           = #282828;
 $content-bg-color             = white;
 $content-bg-color-dark        = $black-dim;
+
+if hexo-config("base16") && hexo-config("base16.enable")
+  $body-bg-color                = $base16wht;
+  $body-bg-color-dark           = $base02 - 60.97560975609756%;
+  $content-bg-color             = $base16wht;
 
 // Selection
 $selection-bg                 = $blue-deep;
@@ -138,6 +164,11 @@ $table-row-odd-bg-color-dark    = #282828;
 $table-row-hover-bg-color       = $whitesmoke;
 $table-row-hover-bg-color-dark  = #363636;
 
+if hexo-config("base16") && hexo-config("base16.enable")
+  $table-row-odd-bg-color         = $base07 + 60.0%;
+  $table-row-odd-bg-color-dark    = $base02 - 60.97560975609756%;
+  $table-row-hover-bg-color-dark  = $base02 - 47.3170731707317%;
+
 
 // Code & Code Blocks
 // --------------------------------------------------
@@ -152,6 +183,16 @@ $highlight-background-dark        = convert(hexo-config('highlight.dark.backgrou
 $highlight-foreground-dark        = convert(hexo-config('highlight.dark.foreground'));
 $highlight-gutter-background-dark = mix($highlight-background-dark, $highlight-foreground-dark, 90%);
 $highlight-gutter-foreground-dark = mix($highlight-background-dark, $highlight-foreground-dark, 10%);
+
+if hexo-config("base16") && hexo-config("base16.enable")
+  $highlight-background        = $base07;
+  $highlight-foreground        = $base02;
+  $highlight-gutter-background = $base06;
+  $highlight-gutter-foreground = $base03;
+  $highlight-background-dark        = $base00;
+  $highlight-foreground-dark        = $base05;
+  $highlight-gutter-background-dark = $base01;
+  $highlight-gutter-foreground-dark = $base04;
 
 
 // Buttons
@@ -169,6 +210,10 @@ $btn-default-hover-color               = $black-deep;
 $btn-default-hover-color-dark          = $text-color-dark;
 $btn-default-hover-border-color        = $black-deep;
 $btn-default-hover-border-color-dark   = $grey-dim;
+
+if hexo-config("base16") && hexo-config("base16.enable")
+  $btn-default-color                     = $base16wht;
+  $btn-default-hover-bg                  = $base16wht;
 
 
 // Pagination
@@ -216,6 +261,10 @@ $brand-hover-color              = white;
 $brand-color-dark               = $grey-lighter;
 $brand-hover-color-dark         = $grey-lighter;
 
+if hexo-config("base16") && hexo-config("base16.enable")
+  $brand-color                    = $base16wht;
+  $brand-hover-color              = $base16wht;
+
 $font-size-title                = (hexo-config('font.enable') and hexo-config('font.title.size') is a 'unit') ? unit(hexo-config('font.title.size'), em) : 1.375em;
 $font-size-subtitle             = $font-size-smaller;
 $subtitle-color                 = $grey-dark;
@@ -234,6 +283,12 @@ $tag-cloud-start      = #aaa;
 $tag-cloud-end        = #111;
 $tag-cloud-start-dark = #555;
 $tag-cloud-end-dark   = #eee;
+
+if hexo-config("base16") && hexo-config("base16.enable")
+  $tag-cloud-start      = $base05 + 15.841584158415841%;
+  $tag-cloud-end        = $base00 - 37.03703703703704%;
+  $tag-cloud-start-dark = $base02 - 17.073170731707318%;
+  $tag-cloud-end-dark   = $base06 + 42.3728813559322%;
 
 
 // Sidebar
@@ -276,6 +331,9 @@ $b2t-font-size                = 12px;
 $b2t-color                    = white;
 $b2t-bg-color                 = $black-deep;
 
+if hexo-config("base16") && hexo-config("base16.enable")
+  $b2t-color                    = $base16wht;
+
 //  .post-expand .post-eof
 //  In Muse scheme, margin above and below the post separator
 $post-eof-margin-top          = 80px; //  or 160px for more white space;
@@ -300,6 +358,16 @@ $note-border = {
   warning : #f0ad4e,
   danger  : #d9534f
 };
+
+if hexo-config("base16") && hexo-config("base16.enable")
+  $note-border = {
+    default : $base04 - 15.302491103202847%,
+    primary :   saturate($base-violet - 14.802631578947366%, 18.69158878504673%),
+    info    : desaturate($base-blue   +  7.633587786259542%, 19.047619047619047%),
+    success : desaturate($base-green  + 34.45378151260504%,  60.68376068376068%),
+    warning : desaturate($base-yellow + 41.641337386018236%, 15.625%),
+    danger  : desaturate($base-red    + 11.934156378600823%,  9.210526315789473%)
+  };
 
 $note-bg = {
   default : lighten(spin($note-border.default, 0), 94% + $lbg),
@@ -337,6 +405,16 @@ $note-modern-border = {
   danger  : #ebcdd2
 };
 
+if hexo-config("base16") && hexo-config("base16.enable")
+  $note-modern-border = {
+    default : $base05 + 70.29702970297029%,
+    primary :   saturate($base-violet + 70.3883495145631%, 125.92592592592592%),
+    info    : desaturate($base-blue   + 64.8854961832061%,   6.25%),
+    success : desaturate($base-green  + 74.78991596638656%, 55.55555555555556%),
+    warning : desaturate($base-yellow + 83.28267477203647%, 18.181818181818183%),
+    danger  : desaturate($base-red    + 71.19341563786008%, 40.0%)
+  };
+
 $note-modern-bg = {
   default : lighten(spin($note-modern-border.default, 10), 60% + ($lbg * 4)),
   primary : lighten(spin($note-modern-border.primary, 10), 40% + ($lbg * 4)),
@@ -354,6 +432,16 @@ $note-modern-text = {
   warning : #8a6d3b,
   danger  : #a94442
 };
+
+if hexo-config("base16") && hexo-config("base16.enable")
+  $note-modern-text = {
+    default : $grey-dim,
+    primary :   saturate($base-violet - 14.802631578947366%, 18.69158878504673%),
+    info    : desaturate($base-blue   - 22.58064516129032%,  29.850746268656714%),
+    success : desaturate($base-green  +  7.002801120448179%, 67.41573033707866%),
+    warning : desaturate($base-yellow +  4.86322188449848%,  59.89847715736041%),
+    danger  : desaturate($base-red    - 11.985018726591761%, 38.32335329341318%)
+  };
 
 $note-modern-hover = {
   default : darken(spin($note-modern-text.default, -10), 32%),
@@ -380,3 +468,8 @@ $label = {
   warning : lighten(spin($note-border.warning, 10), 83% + $lbg),
   danger  : lighten(spin($note-border.danger, -10), 87% + $lbg)
 };
+
+if hexo-config("base16") && hexo-config("base16.enable")
+  if hexo-config("base16.scheme")
+    @import "../_base16extensions/_colorschemes/" + (hexo-config("base16.scheme.colorscheme") || "default")
+  @import "../_base16extensions/aplayer"

@@ -1,0 +1,35 @@
+$color-aplayer-theme = $base-cyan !important
+.aplayer
+  color: $base05 // text color
+  background: $base07
+  border: 3.9px solid $base03
+  .aplayer-body
+    .aplayer-pic
+      .aplayer-play, .aplayer-pause
+        border-color: $base06
+    .aplayer-info
+      .aplayer-music
+        //.aplayer-title
+        .aplayer-author
+          color: $base02
+      .aplayer-lrc
+        .aplayer-lrc-contents
+          p
+            color: $base01
+          p.aplayer-lrc-current
+            color: $color-aplayer-theme
+      .aplayer-controller
+        .aplayer-bar-wrap
+          .aplayer-bar
+            //background:
+            //.aplayer-loaded
+            .aplayer-played
+              background: $color-aplayer-theme
+              .aplayer-thumb
+                background: $color-aplayer-theme
+        .aplayer-time
+          .aplayer-volume-wrap
+            .aplayer-volume-bar-wrap
+              .aplayer-volume-bar
+                .aplayer-volume
+                  background: $color-aplayer-theme

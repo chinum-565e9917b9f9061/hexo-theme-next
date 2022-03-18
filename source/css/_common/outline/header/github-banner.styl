@@ -25,6 +25,10 @@ if (hexo-config('github_banner.enable')) {
       right: 0;
       top: 0;
       z-index: $zindex-0;
+      if hexo-config("base16") && hexo-config("base16.enable") {
+        color: $base07;
+        fill: $base00;
+      }
     }
 
     +tablet-mobile() {
@@ -36,6 +40,10 @@ if (hexo-config('github_banner.enable')) {
         if (($scheme == 'Pisces') or ($scheme == 'Gemini')) {
           color: var(--theme-color);
           fill: white;
+        }
+        if hexo-config("base16") && hexo-config("base16.enable") {
+          color: $base00;
+          fill: $base07;
         }
       }
 
